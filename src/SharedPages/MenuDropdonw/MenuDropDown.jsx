@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai'
-import Avatar from 'react-avatar';
+
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Avatar from '../../Avatar/Avatar';
 
 const MenuDropDown = () => {
     const {user} = useContext(AuthContext);
@@ -21,7 +22,7 @@ const MenuDropDown = () => {
             >
               <AiOutlineMenu />
               <div className='hidden md:block'>
-                <Avatar />
+      <Avatar></Avatar>
               </div>
             </div>
           </div>

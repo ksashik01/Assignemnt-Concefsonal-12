@@ -1,9 +1,10 @@
+import Categories from "../../../Component/Categories/Categories";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>This Is Home</h2>
+            <Categories></Categories>
         </div>
     );
 };

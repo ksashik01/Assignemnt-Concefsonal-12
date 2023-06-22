@@ -1,0 +1,12 @@
+import { useContext } from 'react';
+import avatarimg from '../assets/images/placeholder.jpg'
+import { AuthContext } from '../Providers/AuthProvider';
+
+const Avatar = () => {
+    const {user} = useContext(AuthContext)
+    return (
+       <img src={user && user.photoURL ? user.photoURL : avatarimg} alt="profile" width='30' height='30' />
+    );
+};
+
+export default Avatar;
