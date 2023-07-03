@@ -16,3 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
+
+
+// 756d578a51fdb99c5d0eaf7a9627acb7
+// VITE_IMGBB_KEY=756d578a51fdb99c5d0eaf7a9627acb7
