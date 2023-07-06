@@ -3,9 +3,11 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { TbFidgetSpinner } from 'react-icons/tb';
+import Swal from 'sweetalert2';
+
 
 const SignUp = () => {
-  const {loading,setLoading,signInWithGoogle} = useContext(AuthContext);
+  const {loading,setLoading,signInWithGoogle,createUser,updateUserProfile} = useContext(AuthContext);
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
@@ -30,7 +32,38 @@ const SignUp = () => {
       })
       .then (res => res.json())
       .then(imageData => {
-        console.log(imageData)
+        const imageUrl = imageData.data.display_url
+      
+        createUser(email, password)
+        .then(result => {
+
+          updateUserProfile(name,imageUrl )
+          .then(() =>{
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Your work has been saved',
+              showConfirmButton: false,
+              timer: 1500
+            })
+         
+            navigate(from, { replace: true })
+          })
+
+
+          .catch(err => {
+            setLoading(false)
+            console.log(err.message)
+            toast.error(err.message)
+          })
+
+          })
+      
+        .catch(err => {
+          setLoading(false)
+          console.log(err.message)
+          toast.error(err.message)
+        })
       })
       .catch(err => {
         setLoading(false)

@@ -7,7 +7,7 @@ import Avatar from '../../Avatar/Avatar';
 
 
 const MenuDropDown = () => {
-    const {user} = useContext(AuthContext);
+    const {user,logOut} = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false)
     return ( 
         <div className='relative'>
