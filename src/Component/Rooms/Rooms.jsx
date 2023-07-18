@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Container from '../Container';
 import Card from './Card';
 import Loader from '../../Shared/Loader/Loader';
+import { useSearchParams } from 'react-router-dom';
+
 
 const Rooms = () => {
         const [rooms, setRooms] =useState([])
         const [loading, setLoading] = useState(false)
+        const [params, setParams] = useSearchParams()
+        const categorey = params.get('categorey')
+        console.log(categorey)
 
         useEffect(() =>{
            setLoading(true)
