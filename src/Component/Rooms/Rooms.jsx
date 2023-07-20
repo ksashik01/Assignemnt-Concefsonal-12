@@ -9,20 +9,34 @@ const Rooms = () => {
         const [rooms, setRooms] =useState([])
         const [loading, setLoading] = useState(false)
         const [params, setParams] = useSearchParams()
-        const categorey = params.get('categorey')
-        console.log(categorey)
+        const category = params.get('category')
+   
 
         useEffect(() =>{
            setLoading(true)
            fetch ("rooms.json")
            .then (res => res.json())
-           .then (data =>{setRooms(data)
-           setLoading(false)})
+           .then (data =>{
+
+                if(category){
+                const filtered = data.filter(room => room.category === category)  
+                setRooms(filtered) 
+
+                }
+                
+                
+                else{
+                setRooms(data)
+                }
+
+           setLoading(false)
+        
+        })
 
            .catch(err => console.log(err))
     
     
-        },[] )
+        },[category] )
         if (loading) {
                 return <Loader />
               }

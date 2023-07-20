@@ -11,7 +11,8 @@ const CategoryBox = ({label, icon:Icon}) => {
             currentQuery =qs.parse(params.toString())
         }
         const updatedQuery ={
-            ...currentQuery,categorey: label,
+            ...currentQuery,
+            categorey: label,
         }
 
         const url = qs.stringifyUrl(
@@ -26,7 +27,7 @@ const CategoryBox = ({label, icon:Icon}) => {
     }
 
     return (
-        <div onClick={handleClick} className='flex flex-col items-center justify-center gap-2 p-3 border-b-2 hover:text-neutral-800 border-transparent text-neutral-500'>
+        <div onClick={handleClick}  className='flex flex-col items-center cursor-pointer justify-center gap-2 p-3 border-b-2 hover:text-neutral-800 border-transparent text-neutral-500'>
 
 
             <Icon size={26}></Icon>
