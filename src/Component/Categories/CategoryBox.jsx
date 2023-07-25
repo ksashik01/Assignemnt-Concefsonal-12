@@ -8,12 +8,12 @@ const CategoryBox = ({label, icon:Icon}) => {
     const handleClick = () =>{
         let currentQuery = {}
         if (params){
-            currentQuery =qs.parse(params.toString())
+            currentQuery = qs.parse(params.toString())
         }
         const updatedQuery ={
             ...currentQuery,
             categorey: label,
-        }
+        }  
 
         const url = qs.stringifyUrl(
             {
