@@ -3,7 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { TbFidgetSpinner } from 'react-icons/tb';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 
 
 const SignUp = () => {
