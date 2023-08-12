@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../../Component/Container';
+import Header from '../../Component/Rooms/Header';
 
 const RoomDetails = () => {
     return (
@@ -7,7 +8,7 @@ const RoomDetails = () => {
     <Container>
         <div className='max-screen-lg mx-auto'>
             <div className='flex flex-col gap-6'>
-            <div>Header</div>
+            <Header></Header>
             <div>RoomInfo</div>
             <div>Reservation</div>
 
